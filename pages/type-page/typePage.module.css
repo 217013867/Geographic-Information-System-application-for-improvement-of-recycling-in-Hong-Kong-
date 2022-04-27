@@ -1,0 +1,12 @@
+.table{
+
+    text-align:center;
+    padding: 70px 0;
+    border: 3px solid green;
+
+}
+
+.container {
+    padding-left: 20%;
+    padding-right: 20%;
+}
