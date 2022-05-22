@@ -74,6 +74,8 @@ const Map = () => {
         name: 'FURNITURE (HOUSEHOLD)', file: 'couch.png'
     }, {
         name: 'FURNITURE (INSTITUTION/COMMERCIAL)', file: 'desk.png'
+    },{
+        name: 'Waste Separation Bin', file: 'bin.png'
     }]
 
     useEffect(() => {
