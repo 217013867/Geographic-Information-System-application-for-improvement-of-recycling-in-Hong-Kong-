@@ -526,7 +526,7 @@ section {
     transition: all 0.5s;
 }
 #header.header-scrolled {
-    background: rgba(41, 151, 100, 0.8);
+    background: rgb(48, 126, 7);
     height: 60px;
 }
 #header .logo h1 {
