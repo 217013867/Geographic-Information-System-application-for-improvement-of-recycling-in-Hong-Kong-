@@ -1,6 +1,11 @@
 import { useRef } from "react";
 import styles from './millionaire.module.css'
 
+/**
+ * For rendering frontend component - Start page
+ * @param {object} setUsername 
+ * @returns {JSX.Element}
+ */
 export default function Start({ setUsername }) {
     const inputRef = useRef();
 

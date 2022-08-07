@@ -1,3 +1,8 @@
+
+/**
+ * For rendering frontend component - footer
+ * @returns {JSX.Element}
+ */
 const Footer = () => <footer className="footer" role="contentinfo">
     <div className="container">
         <div className="row">

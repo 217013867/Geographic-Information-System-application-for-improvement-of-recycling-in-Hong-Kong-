@@ -1,5 +1,10 @@
 import { useEffect, useState } from "react";
 
+/**
+ * For rendering frontend component - Timer
+ * @param {Object} questionNumber 
+ * @returns {JSX.Element}
+ */
 export default function Timer({ setStop, questionNumber }) {
     const [timer, setTimer] = useState(30);
 

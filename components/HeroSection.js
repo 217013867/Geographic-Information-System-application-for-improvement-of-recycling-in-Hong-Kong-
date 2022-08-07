@@ -1,5 +1,9 @@
 import {Button} from "reactstrap";
 
+/**
+ * For rendering frontend component - Hero
+ * @returns {JSX.Element}
+ */
 const HeroSection = () => {
 
     return (

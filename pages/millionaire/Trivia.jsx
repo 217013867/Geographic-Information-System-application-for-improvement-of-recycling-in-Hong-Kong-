@@ -3,6 +3,11 @@ import useSound from "use-sound";
 
 import styles from './millionaire.module.css'
 
+/**
+ * For rendering frontend component - Trivia
+ * @param {*} param0 
+ * @returns {JSX.Element}
+ */
 export default function Trivia({data, setStop, questionNumber, setQuestionNumber}) {
     const [question, setQuestion] = useState(null);
     const [selectedAnswer, setSelectedAnswer] = useState(null);

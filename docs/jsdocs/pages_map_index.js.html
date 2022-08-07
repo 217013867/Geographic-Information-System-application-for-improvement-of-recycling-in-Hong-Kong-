@@ -1,4 +1,32 @@
-import {useEffect, useState} from 'react'
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: pages/map/index.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: pages/map/index.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>import {useEffect, useState} from 'react'
 import {Status, Wrapper} from "@googlemaps/react-wrapper";
 import MapComponent from "./map";
 
@@ -111,12 +139,12 @@ const Map = () => {
     const handleClose = () => setShow(false);
 
     const render = (status) => {
-        if (status === Status.LOADING) return <h3>{status} ..</h3>;
-        if (status === Status.FAILURE) return <h3>{status} ...</h3>;
-        if (status === Status.SUCCESS) return <MapComponent setMap={setMap} setCurrentLocation={setCurrentLocation}/>;
+        if (status === Status.LOADING) return &lt;h3>{status} ..&lt;/h3>;
+        if (status === Status.FAILURE) return &lt;h3>{status} ...&lt;/h3>;
+        if (status === Status.SUCCESS) return &lt;MapComponent setMap={setMap} setCurrentLocation={setCurrentLocation}/>;
     };
 
-    const generateSelect = () => s.map(i => <option key={i.name} value={i.name}>{i.name}</option>)
+    const generateSelect = () => s.map(i => &lt;option key={i.name} value={i.name}>{i.name}&lt;/option>)
 
 
     /**
@@ -163,7 +191,7 @@ const Map = () => {
             return;
         }
 
-        for (let i = 0; i < myRoute.legs.length; i++) {
+        for (let i = 0; i &lt; myRoute.legs.length; i++) {
             total += myRoute.legs[i].distance.value;
         }
         return total / 1000;
@@ -181,10 +209,9 @@ const Map = () => {
         if (window.google) {
             const a = data.filter(i => i['type'].includes(flag))
             for (const b of a) {
-                if(b.address && b.name != undefined){
                 const infoWindow = new google.maps.InfoWindow({
-                    content: `<p>Facility Name: ${b.name}</p><p>Openings: ${b.openings}</p><p>Tel: <u>${b.telephone}</u></p>
-                <p>Address: ${b.address}</p>`,
+                    content: `&lt;h3>Facility Name: ${b.name}&lt;/h3>&lt;p>Openings: ${b.openings}&lt;/p>&lt;p>Tel: &lt;u>${b.telephone}&lt;/u>&lt;/p>
+                &lt;p>Address: ${b.address}&lt;/p>`,
                 });
 
                 const location = new google.maps.LatLng(b.latitude, b.longitude)
@@ -206,7 +233,6 @@ const Map = () => {
 
                 markers2.push(marker)
             }
-        }
         }
 
         setMarkers(markers2)
@@ -280,63 +306,85 @@ const Map = () => {
     }
 
     return (
-        <>
-            <Modal
+        &lt;>
+            &lt;Modal
                 isOpen={show}
                 toggle={toggle}
             >
-                <ModalHeader toggle={toggle}>
+                &lt;ModalHeader toggle={toggle}>
                     {'Recycling Tips'}
-                </ModalHeader>
-                <ModalBody>
+                &lt;/ModalHeader>
+                &lt;ModalBody>
                     {modalText}
-                </ModalBody>
-                <ModalFooter>
-                    <Button
+                &lt;/ModalBody>
+                &lt;ModalFooter>
+                    &lt;Button
                         color="success"
                         onClick={toggle}
                     >{'OK'}
-                    </Button>
-                </ModalFooter>
-            </Modal>
-            <Container className={'page-container'}>
-                <Row>
-                    <Col xl={4} sm={4} lg={4}>
-                        <p>Choose Types:</p>
-                        <select onChange={e => handleSelectChange(e.target.value)}>
-                            <option key='999' value={''}/>
+                    &lt;/Button>
+                &lt;/ModalFooter>
+            &lt;/Modal>
+            &lt;Container className={'page-container'}>
+                &lt;Row>
+                    &lt;Col xl={4} sm={4} lg={4}>
+                        &lt;p>Choose Types:&lt;/p>
+                        &lt;select onChange={e => handleSelectChange(e.target.value)}>
+                            &lt;option key='999' value={''}/>
                             {generateSelect()}
-                        </select>
-                        <Label htmlFor={'checkBox'}>Tick for tips: </Label>
-                        <Input name={'checkBox'} type={'checkbox'} value={checkBox}
+                        &lt;/select>
+                        &lt;Label htmlFor={'checkBox'}>Tick for tips: &lt;/Label>
+                        &lt;Input name={'checkBox'} type={'checkbox'} value={checkBox}
                                onChange={() => setCheckBox(!checkBox)}/>
-                        <p>Your Current Location (Higher Priority): {JSON.stringify(currentLocation)}</p>
-                        <Label htmlFor={'currentLocationString'}>Input your location: </Label>
-                        <Input name={'currentLocationString'} type={'text'}
+                        &lt;p>Your Current Location (Higher Priority): {JSON.stringify(currentLocation)}&lt;/p>
+                        &lt;Label htmlFor={'currentLocationString'}>Input your location: &lt;/Label>
+                        &lt;Input name={'currentLocationString'} type={'text'}
                                onChange={e => setCurrentLocationString(e.target.value)}
                                value={currentLocationString}
                         />
-                        <br/>
-                        <br/>
-                        <Label htmlFor={'radius'}>Input Radius (metres): </Label>
-                        <Input name={'radius'} type={'text'} onChange={e => setRadius(e.target.value)}
+                        &lt;br/>
+                        &lt;br/>
+                        &lt;Label htmlFor={'radius'}>Input Radius (metres): &lt;/Label>
+                        &lt;Input name={'radius'} type={'text'} onChange={e => setRadius(e.target.value)}
                                value={radius}/>
-                        <Button className={'btn-success'} onClick={() => drawCircle()}>Draw Circle</Button>
-                        <br/>
-                        <br/>
-                        <p>Total Distance (km): {totalDistance}</p>
-                        <br/>
-                        <Button className={'btn-danger'} onClick={() => clear()}>Clear</Button>
-                        <br/>
-                        <br/>
-                    </Col>
-                    <Col xl={8} sm={8} lg={8}>
-                        <Wrapper apiKey={apiKey} render={render}/>
-                    </Col>
-                </Row>
-            </Container>
-        </>
+                        &lt;Button className={'btn-success'} onClick={() => drawCircle()}>Draw Circle&lt;/Button>
+                        &lt;br/>
+                        &lt;br/>
+                        &lt;p>Total Distance (km): {totalDistance}&lt;/p>
+                        &lt;br/>
+                        &lt;Button className={'btn-danger'} onClick={() => clear()}>Clear&lt;/Button>
+                        &lt;br/>
+                        &lt;br/>
+                    &lt;/Col>
+                    &lt;Col xl={8} sm={8} lg={8}>
+                        &lt;Wrapper apiKey={apiKey} render={render}/>
+                    &lt;/Col>
+                &lt;/Row>
+            &lt;/Container>
+        &lt;/>
     )
 
 }
-export default Map
+export default Map</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#Footer">Footer</a></li><li><a href="global.html#Header">Header</a></li><li><a href="global.html#HeroSection">HeroSection</a></li><li><a href="global.html#Index">Index</a></li><li><a href="global.html#Map">Map</a></li><li><a href="global.html#nextConfig">nextConfig</a></li><li><a href="global.html#TypePage">TypePage</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 3.6.10</a> on Sat Jul 23 2022 15:08:56 GMT+0800 (Hong Kong Standard Time)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

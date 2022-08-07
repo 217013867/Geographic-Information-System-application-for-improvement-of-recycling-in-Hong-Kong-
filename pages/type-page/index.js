@@ -2,11 +2,18 @@ import {Table} from "reactstrap";
 import styles from "./typePage.module.css"
 import {genItem} from "../../utils";
 
+/**
+ * For rendering frontend component - Guideline page
+ * @returns {JSX.Element}
+ */
 const TypePage = () => {
 
     const items = genItem()
 
-
+/**
+ * Table
+ * @returns body
+ */
     const genTable = () => {
         const body = []
         items.map(i => {

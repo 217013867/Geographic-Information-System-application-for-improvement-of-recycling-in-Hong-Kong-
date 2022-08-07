@@ -1,6 +1,10 @@
 import {useEffect, useState} from "react";
 import Link from "next/link";
 
+/**
+ * For rendering frontend component - header
+ * @returns {JSX.Element}
+ */
 const Header = () => {
     const [animateHeader, setAnimateHeader] = useState(false);
 
